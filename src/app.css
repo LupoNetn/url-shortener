@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors */
+  --primary-cyan: hsl(180, 66%, 49%);
+  --primary-violet: hsl(257, 27%, 26%);
+  --secondary-red: hsl(0, 87%, 67%);
+  
+  /* Neutral Colors */
+  --neutral-gray: hsl(0, 0%, 75%);
+  --neutral-grayish: hsl(257, 7%, 63%);
+  --neutral-dark-blue: hsl(255, 11%, 22%);
+  --neutral-dark-violet: hsl(260, 8%, 14%);
+}
+
+/* You can then use these variables in Tailwind's arbitrary values like this: */
+@layer utilities {
+  .primary-cyan {
+    background-color: var(--primary-cyan);
+  }
+  .primary-violet {
+    background-color: var(--primary-violet);
+  }
+  .violet {
+    color: var(--primary-violet);
+  }
+  .secondary-red {
+    color: var(--secondary-red)
+  }
+  .neutral-gray {
+    color: var(--neutral-gray);
+  }
+  .neutral-grayish {
+    color: var(--neutral-grayish);
+  }
+  .bg-gray {
+    background-color: var(--neutral-gray);
+  }
+  .neutral-dark-blue {
+    color: var(--neutral-dark-blue);
+  }
+  .neutral-dark-violet {
+    background-color: var(--neutral-dark-violet);
+  }
+
+  .bg-boost-desktop {
+    background-image: url('../public/images/bg-boost-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-boost-mobile {
+    background-image: url('../public/images/bg-boost-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@layer components {
+   .allignment {
+    @apply xl:p-15 sm:p-10 max-sm:p-5
+   }
+    .btn {
+        @apply mr-3 px-4 py-2 rounded-4xl cursor-pointer
+    }
+
+    .responsive-bg {
+        @apply bg-boost-mobile md:bg-boost-desktop primary-violet;
+    }
+}
